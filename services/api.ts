@@ -3,7 +3,6 @@ import axios from "axios";
 
 const axiosInstanceAuth = axios.create({
     baseURL: "https://ethnoeswalletapp-backend.vercel.app/",
-    // baseURL: process.env.NEXT_PUBLIC_BASEURL,
     timeout: 10000,
     headers: {
       'Content-Type': 'application/json',
