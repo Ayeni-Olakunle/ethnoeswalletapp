@@ -2,14 +2,9 @@
 
 import { AiFillDashboard } from "react-icons/ai";
 import Link from "next/link";
-import { RiLogoutBoxLine } from "react-icons/ri";
 import { useRouter, usePathname } from "next/navigation";
-// import Logo from "@/Asset/swave_logo_white.png";
-import { FaCircleUser } from "react-icons/fa6";
-import { IoIosSend } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { navLinks, currentState } from "@/types/types";
+import { navLinks } from "@/types/types";
 import { BsGraphUp } from "react-icons/bs";
 import { FaRegCreditCard } from "react-icons/fa";
 import { MdQrCode2 } from "react-icons/md";

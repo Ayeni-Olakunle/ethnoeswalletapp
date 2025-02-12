@@ -4,8 +4,8 @@ import { MdOutlineArrowDropDown } from "react-icons/md";
 import React from "react";
 import { usePathname } from "next/navigation";
 import { IoMenu } from "react-icons/io5";
-import { useQueryClient } from "@tanstack/react-query";
-import { currentState } from "@/types/types";
+// import { useQueryClient } from "@tanstack/react-query";
+// import { currentState } from "@/types/types";
 
 export default function Header() {
   const path = usePathname();
