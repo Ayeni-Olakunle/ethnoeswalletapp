@@ -2,24 +2,23 @@
 
 import { AiFillDashboard } from "react-icons/ai";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { IoMdClose } from "react-icons/io";
-import { navLinks } from "@/types/types";
+import { currentState, navLinks } from "@/types/types";
 import { BsGraphUp } from "react-icons/bs";
 import { FaRegCreditCard } from "react-icons/fa";
 import { MdQrCode2 } from "react-icons/md";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 export default function Navbar() {
   const path = usePathname();
-  // const router = useRouter();
-  // const client = useQueryClient();
+  const queryClient = useQueryClient();
 
-  // const { data } = useQuery<currentState>({
-  //   queryKey: ["sidebar"],
-  //   initialData: {
-  //     current: false,
-  //   },
-  // });
+  const { data } = useQuery<currentState>({
+    queryKey: ["sidebar"],
+    initialData: () =>
+      queryClient.getQueryData(["sidebar"]) ?? { current: false },
+  });
 
   const NavLink: navLinks[] = [
     {
@@ -51,19 +50,18 @@ export default function Navbar() {
   return (
     <nav
       className={`w-[30%] bg-blue-500 h-screen sm:absolute z-[1] ${
-        true ? "sm:w-[17%]" : "sm:w-0"
+        data.current ? "sm:w-[70%]" : "hidden"
       }`}
-      // data-aos="fade-right"
     >
       <p className="hidden justify-end p-[20px] text-[25px] text-[white] -mb-[55px] sm:flex">
         <IoMdClose
-        // onClick={() => {
-        //   client.setQueryData<currentState>(["sidebar"], () => {
-        //     return {
-        //       current: false,
-        //     };
-        //   });
-        // }}
+          onClick={() => {
+            queryClient.setQueryData<currentState>(["sidebar"], () => {
+              return {
+                current: false,
+              };
+            });
+          }}
         />
       </p>
       <div className="flex justify-start items-center px-[40px] py-[10px] gap-[20px] mt-[30px]">
@@ -82,13 +80,13 @@ export default function Navbar() {
                     ? "text-blue-500 bg-[white]"
                     : "text-[white] bg-blue-500"
                 }`}
-                // onClick={() => {
-                //   client.setQueryData<currentState>(["sidebar"], () => {
-                //     return {
-                //       current: false,
-                //     };
-                //   });
-                // }}
+                onClick={() => {
+                  queryClient.setQueryData<currentState>(["sidebar"], () => {
+                    return {
+                      current: false,
+                    };
+                  });
+                }}
               >
                 {item.icon}
                 {item.name}

@@ -9,6 +9,7 @@ interface Props {
 }
 
 export default function QueryProvider({ children }: Props) {
+  // Initialize the QueryClient with default options
   const [queryClient] = useState(() => new QueryClient());
 
   return (
