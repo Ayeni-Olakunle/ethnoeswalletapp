@@ -2,7 +2,7 @@
 
 import { AiFillDashboard } from "react-icons/ai";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { IoMdClose } from "react-icons/io";
 import { currentState, navLinks } from "@/types/types";
 import { BsGraphUp } from "react-icons/bs";
