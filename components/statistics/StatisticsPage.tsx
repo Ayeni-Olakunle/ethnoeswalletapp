@@ -62,8 +62,12 @@ useEffect(() => {
           {/* Total Balance */}
           <div className="col-span-12 lg:col-span-8 sm:w-full">
             <div className="p-6 bg-gray-50 border rounded-lg">
-              <h2 className="text-xl font-medium text-gray-600 mb-4">Total Balance</h2>
-              <p className="text-4xl font-bold text-gray-900 sm:text-2xl">₦{Balance?.data.amount.toLocaleString("en-US")}</p>
+              <h2 className="text-xl font-medium text-gray-600 mb-4">
+                Total Balance
+              </h2>
+              <p className="text-4xl font-bold text-gray-900 sm:text-2xl">
+                ₦{Balance?.data.amount.toLocaleString("en-US")}
+              </p>
             </div>
           </div>
 
@@ -72,7 +76,7 @@ useEffect(() => {
             <Dropdown
               options={["Month", "Year"]}
               selected={timeframe}
-              onSelect={(value: any) => setTimeframe(value)}
+              onSelect={(value: string) => setTimeframe(value)}
             />
           </div>
         </section>
@@ -87,12 +91,16 @@ useEffect(() => {
         <section className="grid grid-cols-2 gap-8">
           <div className="p-6 bg-indigo-100 text-center rounded-lg">
             <h3 className="text-lg font-medium text-gray-600 mb-2">Income</h3>
-            <p className="text-2xl font-bold text-indigo-800">₦{amount.toLocaleString("en-US")}</p>
+            <p className="text-2xl font-bold text-indigo-800">
+              ₦{amount.toLocaleString("en-US")}
+            </p>
           </div>
 
           <div className="p-6 bg-red-100 text-center rounded-lg">
             <h3 className="text-lg font-medium text-gray-600 mb-2">Expenses</h3>
-            <p className="text-2xl font-bold text-red-800">₦{expenses.toLocaleString("en-US")}</p>
+            <p className="text-2xl font-bold text-red-800">
+              ₦{expenses.toLocaleString("en-US")}
+            </p>
           </div>
         </section>
       </div>

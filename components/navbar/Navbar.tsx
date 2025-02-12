@@ -2,7 +2,7 @@
 
 import { AiFillDashboard } from "react-icons/ai";
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { IoMdClose } from "react-icons/io";
 import { navLinks } from "@/types/types";
 import { BsGraphUp } from "react-icons/bs";
@@ -11,7 +11,7 @@ import { MdQrCode2 } from "react-icons/md";
 
 export default function Navbar() {
   const path = usePathname();
-  const router = useRouter();
+  // const router = useRouter();
   // const client = useQueryClient();
 
   // const { data } = useQuery<currentState>({
@@ -31,7 +31,7 @@ export default function Navbar() {
     {
       id: "2",
       name: "Statistics",
-      icon: <BsGraphUp  />,
+      icon: <BsGraphUp />,
       link: "/statistics",
     },
     {
@@ -57,13 +57,13 @@ export default function Navbar() {
     >
       <p className="hidden justify-end p-[20px] text-[25px] text-[white] -mb-[55px] sm:flex">
         <IoMdClose
-          // onClick={() => {
-          //   client.setQueryData<currentState>(["sidebar"], () => {
-          //     return {
-          //       current: false,
-          //     };
-          //   });
-          // }}
+        // onClick={() => {
+        //   client.setQueryData<currentState>(["sidebar"], () => {
+        //     return {
+        //       current: false,
+        //     };
+        //   });
+        // }}
         />
       </p>
       <div className="flex justify-start items-center px-[40px] py-[10px] gap-[20px] mt-[30px]">
@@ -97,7 +97,6 @@ export default function Navbar() {
           );
         })}
       </ul>
-      
     </nav>
   );
 }
