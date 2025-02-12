@@ -50,7 +50,7 @@ export default function Navbar() {
   return (
     <nav
       className={`w-[30%] bg-blue-500 h-screen sm:absolute z-[1] ${
-        data.current ? "sm:w-[70%]" : "hidden"
+        data.current ? "sm:w-[70%]" : "sm:hidden"
       }`}
     >
       <p className="hidden justify-end p-[20px] text-[25px] text-[white] -mb-[55px] sm:flex">
