@@ -30,11 +30,7 @@ export default function Header() {
           {path === "/" && "Dashboard"}
           {path === "/statistics" && "Statistics"}
           {path === "/mycard" && "My Card"}
-          {path === "/admin/finance" && "Finance"}
-          {path === "/admin/transactions" && "Transactions"}
-          {path === "/admin/notifications" && "Notification"}
-          {path === "/admin/enquiries" && "Enquiries"}
-          {path === "/admin/business" && "Business"}
+          {path === "/qrcode" && "Profile"}
         </h1>
       </div>
       <div className="flex justify-center items-center gap-[20px] sm:gap-[.5rem]">
@@ -46,7 +42,7 @@ export default function Header() {
             Hello
           </h4>
           <p className=" text-base font-medium leading-[24.2px] text-left text-[#747474]">
-          Deji John
+            Deji John
           </p>
         </div>
         <MdOutlineArrowDropDown className="text-[#747474] text-[25px]" />
